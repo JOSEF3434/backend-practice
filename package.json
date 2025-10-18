@@ -1,0 +1,31 @@
+{
+  "name": "pracice",
+  "version": "1.0.0",
+  "description": "learn backend configration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server",
+    "dev": "nodemon backend/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JOSEF3434/backend-practice.git"
+  },
+  "author": "Yossief Enyew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JOSEF3434/backend-practice/issues"
+  },
+  "homepage": "https://github.com/JOSEF3434/backend-practice#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1",
+    "nodemon": "^3.1.10"
+  }
+}
