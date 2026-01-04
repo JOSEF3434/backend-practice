@@ -59,4 +59,35 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { userCteate, login };
+const getUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving users', error: error.message });
+  }
+};
+
+const getUser = async (req, res)=>{
+  try {const user = await User.findById(req.params.id);
+  if(!user){
+    res.status(404).json({message:"user not found"});
+  }
+  res.status(200).json(user);}
+  catch(error){
+    res.status(500).json({message:"user not found ", error:error.message})
+  }
+}
+
+const updatedUser = async (req,res) => {
+  const id = req.params.id;
+
+  const userExist = await User.findOne({_id:id});
+
+  if(!userExist) return res.status(404).json({message:'user not found'});
+
+  const UpdatedUser = await User.findByIdAndUpdate(id, req.body, {new:true});
+  res.status(200).json(UpdatedUser); 
+
+} 
+module.exports = { userCteate, login, getUsers ,getUser};

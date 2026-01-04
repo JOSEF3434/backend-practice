@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const defaultUri = "mongodb://localhost:27017/backendPdracrice";
-const uri = process.env.MONGO_URI || defaultUri;
-
+const uri = process.env.MONGO_URL; 
+ 
 mongoose
   .connect(uri)
   .then(() => {

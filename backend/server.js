@@ -19,8 +19,8 @@ app.get('/', (req,res) =>{
   res.send("hi this is test api on the first time");
 });
 
-// ✅ Correct router mount
+//  Correct router mount
 app.use('/api/users', userRoutes);
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`));
